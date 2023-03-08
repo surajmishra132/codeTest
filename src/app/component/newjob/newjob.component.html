@@ -1,0 +1,49 @@
+<div class="create-NewJob">
+    <h2 class="text-center my-2">{{isEditPageOpen ? "Update Job": "Add Job"}} </h2>
+    <form [formGroup]="CreateForm" (ngSubmit)="createNewJob()">
+        <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="id" formControlName="id">
+          </div>
+        <div class="mb-3">
+            <label for="Jobnumber" class="form-label">Job Number</label>
+            <input type="text" class="form-control" id="Jobnumber" formControlName="job_number">
+          </div>
+    
+          <div class="mb-3">
+            <label for="JobTitle" class="form-label">Job Title</label>
+            <input type="text" class="form-control" id="JobTitle" formControlName="job_title">
+          </div>
+    
+          <div class="mb-3 ">
+            <label class="form-check-label" for="JobStartDate">Job Start Date</label>
+            <input type="date" class="form-control" id="JobStartDate" formControlName="job_start_date">
+          </div>
+    
+          <div class="mb-3">
+            <label class="form-check-label" for="JobEndDate">Job End Date</label>
+            <input type="date" class="form-control" id="JobEndDate" formControlName="job_close_date">
+            
+          </div>
+    
+          <div class="mb-3">
+            <label class="form-check-label" for="ExpRequired">Experiance Required</label>
+            <input type="text" class="form-control" id="ExpRequired"  formControlName="experience_required">       
+          </div>
+    
+          <div class="mb-3">
+            <label class="form-check-label" for="NoOpening">Number of opening</label>
+            <input type="text" class="form-control" id="NoOpening" formControlName="number_of_openings">       
+          </div>
+    
+          <div class="mb-3">
+            <label class="form-check-label" for="JobNotes">Job Notes</label>
+            <input type="text" class="form-control" id="job_notes" formControlName="job_notes">       
+          </div>
+    
+          <button type="submit" class="btn btn-primary" >{{isEditPageOpen ? "Edit": "Submit"}}</button>
+          
+    
+    </form>
+</div>
+

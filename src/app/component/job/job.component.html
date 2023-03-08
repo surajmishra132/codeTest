@@ -1,0 +1,35 @@
+<div class="job-card">
+    <button type="button" class="btn btn-success pointer" (click)="createNewJob()">Create Job</button>
+
+<div class="table">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Job Number</th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Job StartDate</th>
+            <th scope="col">Job closeDate</th>
+            <th scope="col">Experiance required</th>
+            <th scope="col">No of job opening</th>
+            <th scope="col">job Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of availableJobs" class="pointer" style="cursor:pointer" (click)="EditJobInfo(job.id, job)">
+            <td>{{job.id}}</td>
+            <td>{{job.job_number}}</td>
+            <td>{{job.job_title}}</td>
+            <td>{{job.job_start_date}}</td>
+            <td>{{job.job_close_date}}</td>
+            <td>{{job.experience_required}}</td>
+            <td>{{job.number_of_openings}}</td>
+            <td>{{job.job_notes}}</td>
+          </tr>
+          
+            
+        </tbody>
+      </table>
+</div>
+
+</div>
