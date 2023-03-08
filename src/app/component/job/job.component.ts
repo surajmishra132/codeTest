@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { Job } from 'src/app/job';
 
 @Component({
   selector: 'app-job',
@@ -24,7 +25,7 @@ availableJobs:any
 this.route.navigate(["/job/new"])
   }
 
-  EditJobInfo(id:number,job:any){
+  EditJobInfo(id:number,job:Job){
     let encId=encodeURIComponent(id)
     this.route.navigate(["/job/new/", encId],{ state: job})
     

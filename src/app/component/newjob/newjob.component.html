@@ -1,7 +1,7 @@
 <div class="create-NewJob">
     <h2 class="text-center my-2">{{isEditPageOpen ? "Update Job": "Add Job"}} </h2>
     <form [formGroup]="CreateForm" (ngSubmit)="createNewJob()">
-        <div class="mb-3">
+        <div class="mb-3" hidden>
             <label for="id" class="form-label">Id</label>
             <input type="text" class="form-control" id="id" formControlName="id">
           </div>

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 // import { window, filter } from 'rxjs';
 
 import { ApiService } from 'src/app/api.service';
+import { Job } from 'src/app/job';
 
 @Component({
   selector: 'app-newjob',
@@ -13,7 +14,7 @@ import { ApiService } from 'src/app/api.service';
 export class NewjobComponent implements OnInit {
 
   constructor( private api: ApiService, private _Activatedroute:ActivatedRoute, private route: Router) { 
-    console.log(route.url.split("job/new/")[1])
+    // console.log(route.url.split("job/new/")[1])
  
   }
 
@@ -41,16 +42,16 @@ isEditPageOpen:boolean=false
     if(this.isEditPageOpen){
       let id= this.route.url.split("job/new/")[1]
       this.api.put(`jobs/${id}`, this.CreateForm.value).subscribe((res:any)=>{
-        console.log(res)
+    
         this.route.navigate(["/job"])
       })
     }
-this.api.post("jobs", this.CreateForm.value).subscribe((res:any)=>{
-  console.log(res)
+this.api.post("jobs", this.CreateForm.value).subscribe((res:Job[])=>{
+  this.route.navigate(["/job"])
 })
   }
 
-  patchValueCreateForm(val:any){
+  patchValueCreateForm(val:Job){
     if(val["id"]){
       this.isEditPageOpen=true
       this.CreateForm.patchValue(val)
